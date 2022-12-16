@@ -1,8 +1,6 @@
 
 file = open("input.txt", "r")
 
-oponent = ['A', 'B', 'C']
-me = dict({'X': 'A', 'Y':'B', 'Z':'C'})
 
 A = 1
 B = 2
@@ -16,27 +14,27 @@ score = 0
 for line in file:
     
     if(line[0] == 'A'):
-        if(me[line[2]] == 'A'):
+        if(line[2] == 'Y'):
             score += (A + DRAW)
-        elif(me[line[2]] == 'B'):
+        elif(line[2] == 'Z'):
             score += (B + WIN)
-        elif(me[line[2]] == 'C'):
+        elif(line[2] == 'X'):
             score += (C + LOSS)
 
     elif(line[0] == 'B'):
-        if(me[line[2]] == 'A'):
+        if(line[2] == 'X'):
             score += (A + LOSS)
-        elif(me[line[2]] == 'B'):
+        elif(line[2] == 'Y'):
             score += (B + DRAW)
-        elif(me[line[2]] == 'C'):
+        elif(line[2] == 'Z'):
             score += (C + WIN)
 
     elif(line[0] == 'C'):
-        if(me[line[2]] == 'A'):
+        if(line[2] == 'Z'):
             score += (A + WIN)
-        elif(me[line[2]] == 'B'):
+        elif(line[2] == 'X'):
             score += (B + LOSS)
-        elif(me[line[2]] == 'C'):
+        elif(line[2] == 'Y'):
             score += (C + DRAW)
         
 
