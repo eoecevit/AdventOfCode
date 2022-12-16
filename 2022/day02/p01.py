@@ -1,6 +1,7 @@
 
 file = open("input.txt", "r")
 
+me = dict({'X': 'A', 'Y':'B', 'Z':'C'})
 
 A = 1
 B = 2
@@ -14,27 +15,27 @@ score = 0
 for line in file:
     
     if(line[0] == 'A'):
-        if(line[2] == 'Y'):
+        if(me[line[2]] == 'A'):
             score += (A + DRAW)
-        elif(line[2] == 'Z'):
+        elif(me[line[2]] == 'B'):
             score += (B + WIN)
-        elif(line[2] == 'X'):
+        elif(me[line[2]] == 'C'):
             score += (C + LOSS)
 
     elif(line[0] == 'B'):
-        if(line[2] == 'X'):
+        if(me[line[2]] == 'A'):
             score += (A + LOSS)
-        elif(line[2] == 'Y'):
+        elif(me[line[2]] == 'B'):
             score += (B + DRAW)
-        elif(line[2] == 'Z'):
+        elif(me[line[2]] == 'C'):
             score += (C + WIN)
 
     elif(line[0] == 'C'):
-        if(line[2] == 'Z'):
+        if(me[line[2]] == 'A'):
             score += (A + WIN)
-        elif(line[2] == 'X'):
+        elif(me[line[2]] == 'B'):
             score += (B + LOSS)
-        elif(line[2] == 'Y'):
+        elif(me[line[2]] == 'C'):
             score += (C + DRAW)
         
 
