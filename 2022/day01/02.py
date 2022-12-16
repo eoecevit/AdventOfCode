@@ -1,10 +1,9 @@
 #/bin/python
 
 file = open("input.txt", "r")
-l = file.readlines()
 
 cal = [0]
-for line in l:
+for line in file:
     split = line.split('\n')
     
     if(split[0].isdigit()):
