@@ -4,9 +4,9 @@ c = 0
 for pairs in open("input.txt", "r"):
     one, two, three, four = map(int, pairs.replace("-", ",").split(","))
     
-    if one <= three and two >= four or three <= one and four >= two:
-        c +=1
-    elif one == four or two == three:
+    a = set(range(one, two + 1))
+    b = set(range(three, four + 1))
+    if a & b:
         c += 1
     
 
