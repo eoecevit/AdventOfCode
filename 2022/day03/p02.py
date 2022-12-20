@@ -10,7 +10,7 @@ for line in open("input.txt", "r"):
             if c in badges[1] and c in badges[2]:
                 print(c)
                 print()
-                score += (ord(c)-64+26)%58
+                score += (ord(c)-38)%58
                 break
         badges = []
 print(score)

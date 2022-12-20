@@ -6,6 +6,6 @@ for line in open("input.txt", "r"):
     lhs = line[x:]
 
     c, = set(rhs) & set(lhs)
-    score += (ord(c)-64+26)%58
+    score += (ord(c)-38)%58
             
 print(score)
