@@ -23,18 +23,22 @@ for line in open("input.txt", "r"):
         else:
             cwd[n] = int(d)
 
-def calc(dir = root):
-    if type(dir) is int:
-        return (dir, 1)
-    size = 0
-    anz = 0
-    for sub in dir.values():
-        (s, a) = calc(sub)
-        if()
-        size += s
-        anz += a
-    if size <= 8381165:
-        anz += size
-    return(size, anz)
+def size(dir = root):
+    if type(dir) == int:
+        return dir
+    return sum(map(size, dir.values()))
 
-print(calc()[1])
+t = size() - 40_000_000
+
+def solve(dir = root):
+    ans = float("inf")
+    if size(dir) >= t:
+        ans = size(dir)
+    for child in dir.values():
+        if type(child) == int:
+            continue
+        q = solve(child)
+        ans = min(ans, q)
+    return ans
+
+print(solve())
